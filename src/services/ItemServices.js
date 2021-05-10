@@ -17,6 +17,7 @@ export const insertProduct = async( product ) => {
   try {
     const data = await firebase.db.collection('products').add(product);
     if (data) {
+      console.log('Producto agregado con exito: ', data)
       return true;
     }
   } catch (error) {
