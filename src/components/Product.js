@@ -11,6 +11,7 @@ const Product = ({ product, index }) => {
   return (
     <div key={'product'+product.id} className={'Product' + index}>
       <div className='Name'>          Name: {product.name}</div>
+      <div className='Sku'>           SKU: {product.sku}</div> 
       <div className='Description'>   Description: {product.description}</div>
       <div className='Price'>         Price: ${product.price}</div>
       <div className='Stock'>         Stock: {product.stock} units</div>
