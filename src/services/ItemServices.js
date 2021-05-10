@@ -1,4 +1,3 @@
-import instance from "../config/axios";
 import firebase from '../config/firebase';
 
 export const getProductos = async() => {
