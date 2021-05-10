@@ -7,6 +7,7 @@ const Menu = () => (
       <ol> <Link to={'/'}> Home </Link> </ol>
       <ol> <Link to={'/login'}> Login </Link> </ol>
       <ol> <Link to={'/register'}> Register </Link> </ol>
+      <ol> <Link to={'/addproduct'}> Add Product </Link> </ol>
     </ul>
   </div>
 )
