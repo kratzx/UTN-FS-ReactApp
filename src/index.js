@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import './resources/styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import dotenv from 'dotenv'; 
 
-dotenv.config();
 
 ReactDOM.render(
   <React.StrictMode>
