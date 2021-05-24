@@ -1,17 +1,20 @@
 import { BrowserRouter } from 'react-router-dom';
-
 import './resources/styles/App.css';
-import Menu from './components/Menu'
+import Navbar from './components/Navbar'
 import Routes from './Routes'
+import LoginState from './context/LoginState'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <h1> TP React UTN </h1>
-        <Menu />
-        <Routes />
-      </BrowserRouter>
+      <LoginState>
+        <BrowserRouter>
+          <Header/>
+          <Navbar />
+          <Routes />
+        </BrowserRouter>
+      </LoginState>
     </div>
   );
 }

@@ -23,9 +23,32 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App h1 {
+  padding: 5px 15px;
+  text-align: left;
+}
 
 .App-link {
   color: #61dafb;
+}
+.topnav {
+  overflow: hidden;
+}
+.navUser {
+  float: right;
+}
+
+.Header h2 {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+/* Style the links inside the navigation bar */
+.navitem {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
 }
 
 @keyframes App-logo-spin {

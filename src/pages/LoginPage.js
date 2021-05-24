@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import LoginForm from '../components/forms/LoginForm';
 import loginUser from '../services/loginUser';
+import EcommerceContext from '../context/EcommerceContext';
 
 const LoginPage = () => {
 
-  const [logedin, setLogedin] = useState(false);
   const [loading, setLoading] = useState(false);
+  const context = useContext(EcommerceContext);
 
   const handleSubmit = (event, form) => {
     event.preventDefault();
     setLoading(true);
-    loginUser(form).then((success) => {
-      setLogedin(success);
+    loginUser(form).then((user) => {
+      context.loginUser(user);
       setLoading(false);
     });
   }
 
-  if (!logedin && !loading) {
-    return (
-      <div key='register' className="Register">
-        <h2> Formulario de Logeo </h2>
-        <LoginForm 
-          onSubmitForm={handleSubmit}/>
-      </div>
-    );
-  }
   if (loading) {
     return (
       <div className='loadingRegister'>
@@ -33,11 +25,18 @@ const LoginPage = () => {
       </div>
     );
   }
-  if (logedin) {
+  if (context.userLogin) {
     return (
       <Redirect 
-        to={{pathname: "/"}}/>
+      to={{pathname: "/"}}/>
     );
   }
+  return (
+    <div key='register' className="Register">
+      <h2> Formulario de Logeo </h2>
+      <LoginForm 
+        onSubmitForm={handleSubmit}/>
+    </div>
+  );
 }
 export default LoginPage;

@@ -24,7 +24,7 @@ const firebaseCreateUser = async ({email, password, passwordConfirm}) => {
   }  
 }
 const firebaseAddUserToDB = async (form, userId) => {
-  const data = await firebase.db.collection('users').add({
+  const data = await firebase.db.collection('users').doc(userId).set({
     nombre: form.nombre,
     apellido: form.apellido,
     email: form.email,
